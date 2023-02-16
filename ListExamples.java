@@ -23,26 +23,32 @@ class ListExamples {
   // and return a new list that has all the strings in both list in sorted order.
   static List<String> merge(List<String> list1, List<String> list2) {
     List<String> result = new ArrayList<>();
-    int index1 = 0, index2 = 0;
-    while(index1 < list1.size() && index2 < list2.size()) {
-      if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
-        result.add(list1.get(index1));
-        index1 += 1;
-      }
-      else {
-        result.add(list2.get(index2));
-        index2 += 1;
-      }
+    for(int i = 0; i < list1.length; i++) {
+      result.add(list1[i]);
     }
-    while(index1 < list1.size()) {
-      result.add(list1.get(index1));
-      index1 += 1;
+    for(int i = 0; i < list2.length; i++) {
+      result.add(list2[i]);
     }
-    while(index2 < list2.size()) {
-      result.add(list2.get(index2));
-      index1 += 1;
-    }
-    return result;
+
+    // while(index1 < list1.size() && index2 < list2.size()) {
+    //   if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+    //     result.add(list1.get(index1));
+    //     index1 += 1;
+    //   }
+    //   else {
+    //     result.add(list2.get(index2));
+    //     index2 += 1;
+    //   }
+    // }
+    // while(index1 < list1.size()) {
+    //   result.add(list1.get(index1));
+    //   index1 += 1;
+    // }
+    // while(index2 < list2.size()) {
+    //   result.add(list2.get(index2));
+    //   index1 += 1;
+    // }
+    return Collections.sort(result);
   }
 
 
